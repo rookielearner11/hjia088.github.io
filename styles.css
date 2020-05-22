@@ -5,9 +5,12 @@
   	h1{
   		text-align: center;
   	}
-  	h2{
-  		text-align: center;
-  	}
+  	  .photo{
+  background-color: lightblue;    
+  text-align: center;
+  display: block;
+  }
+
 
   	.Div1{
   border: 5px outset black;
