@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+  <title>Fresh Farm</title>
+  <meta charset="UTF-8">
+ </head>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body>
+
+<!-- Tab links, each one with an onclick event associated with it -->
+<div class="tab">
+  <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+  <button class="tablinks" onclick="openInfo(event,'Shop All')">ShopAll</button>
+</div>
+
+<!-- Tab content -->
+<div id="Client" class="tabcontent">
+  <h3 style="text-align: center">Personal Tailor</h3>
+  <p align="center">We will display products based on your favour</p>
+	<div align="center">Custmize for yourself:
+	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')" >
+	<option value=""></option>
+	<option value="Vegetarian">Vegetarian</option>
+    <option value="GlutenFree">GlutenFree</option>
+    <option value="FruitNinja">FruitNinja</option>
+    <option value="MeatLover">MeatLover</option>
+    <option value="EatHealthy">EatHealthy</option>
+    <option value="FruitNinja&MeatLover">FruitNinja&MeatLover</option>
+    <option value="FruitNinja&GlutenFree">FruitNinja&GlutenFree</option>
+    <option value="MeatLover&GlutenFree">MeatLover&GlutenFree</option>
+    <option value="Vegetarian&GlutenFree">Vegetarian&GlutenFree</option>
+    <option value="EatHealthy&GlutenFree">EatHealthy&GlutenFree</option>
+    <option value="None">None</option>
+	</select>
+	<div align="center"> No Idea? Don't Worry! Let's shop everything we have!</div>
+	<button id="addCart" type="button" class="tablinks" onclick="openInfo(event,'Shop All')"> Shop All</button>
+</div>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Your targeted products</h3>
+  <p>We preselected products based on your restrictions.</p>
+	 Choose items to buy:
+	 <img id="0" src="brocoli.jpg" width="10%" style="display: none">  <br>
+	 <img id="1"src="bread.jpg" width="10%" style="display: none">  <br>
+	 <img id="2" src="apple.jpg" width="10%" style="display: none"> <br>
+	 <img id="3"src="mushroom.jpg" width="10%" style="display: none"><br>
+	 <img id="4"src="orange.jpg" width="10%" style="display: none"><br>
+	 <img id="5"src="strawberry.jpg"width="10%" style="display: none"><br>
+	 <img id="6"src="spinach.jpg"width="10%" style="display: none"><br>
+	 <img id="7"src="tomatoes.jpg"width="10%" style="display: none"><br>
+	 <img id="8"src="cucumber.jpg"width="10%" style="display: none"><br>
+	 <img id="9"src="salmon.jpg"width="10%" style="display: none"><br>
+	 <img id="10"src="chickenwings.png"width="10%"style="display: none"><br>
+	 <img id="11"src="ribs.jpg"width="10%"style="display: none"><br>
+	 <img id="12"src="beef.jpg"width="10%"style="display: none"><br>
+
+
+	 <div id="displayProduct" ></div>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Add selected items to cart.
+	</button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3>Cart</h3>
+  <p>Here is your cart.</p>
+  <div id="displayCart"></div>
+</div>
+
+<div id="Shop All" class="tabcontent" >
+	<h4 style="text-align: center">Welcome to Fresh Farm!</h4>
+	<p>Browse by category: </p>
+	<div id="selection" class="filter">
+	<input id="vegetables" type="radio" name="vegetables" value="vegetables">Vegetables<br>
+	<input id="meat" type="radio" name="meat" value="meat">Meat<br>
+	<input id="fruits" type="radio" name="fruits" value="fruits">Fruits<br>
+	<input id="dairyproducts" type="radio" name="dairyproducts" value="dairyproducts">Dairy Products<br>
+	<input id= "juice"type="radio" name="juiceproducts" value="juice/beverages">Juice/Beverages<br>
+	<input id="cooking" type="radio" name="cookproducts" value="cooking">Cooking products<br>
+	<input id="none" type="radio" name="none" value="none">Show me everything<br>
+	<button id="apply" type="button" style="text-align: center" onclick="applyfilter()"> Apply</button>
+	</div>
+	<div id="productsection" class="mainpage">
+		<h5>Here is your result:</h5>
+
+		<label id="brocolilabel" style="display: none;">
+			<input id="a" type="radio" name="brocoli" value="brocoli" >
+			brocoli 1.99$
+			<img  src="brocoli.jpg" width=10%>
+		</label><br>
+
+		<label id="canadadry" style="display: none;">
+			<input id="m" type="radio" name="canadadry" value="canadadry" >
+			anadadry 2$
+			<img  src="canadadry.jpg" width=10%>
+		</label><br>
+
+		<label id="coke" style="display: none;">
+			<input id="n" type="radio" name="coke" value="coke" >
+			coke 2.5$
+			<img  src="coke.jpg" width=10%>
+		</label><br>
+
+		<label id="applelabel" style="display: none;">
+			<input id="x" type="radio" name="apple" value="apple" >
+			apple 2.99$
+			<img  src="apple.jpg" width=10%>
+		</label><br>
+
+		<label id="milk" style="display: none;">
+			<input id="b"type="radio" name="milk" value="milk" >
+			milk 2.99$
+			<img  src="milk.jpg" width=10%>
+		</label><br>
+
+
+		<label id="mushroomlabel" style="display: none;">
+			<input id="c" type="radio" name="mushroom" value="mushroom" >
+			mushroom 3.00$
+			<img  src="mushroom.jpg" width=10%>
+		</label> <br>
+
+		<label id="eggs" style="display: none;">
+			<input id="egg"type="radio" name="eggs" value="eggs" >
+			eggs 3.99$
+			<img  src="eggs.jpg" width=10%>
+		</label><br>
+
+		<label id="orangelabel" style="display: none;">
+			<input id="d" type="radio" name="orange" value="orange">
+			orange 4.99$
+			<img  src="orange.jpg" width=10%>
+		</label><br>
+		
+		<label id="strawberrylabel" style="display: none;">
+			<input id="e" type="radio" name="strawberry" value="strawberry">
+			strawberry 5.00$
+			<img  src="strawberry.jpg" width=10%>
+		</label><br>
+
+		<label id="orangejuice" style="display: none;">
+			<input id="y" type="radio" name="orangejuice" value="orangejuice">
+			orangejuice 5.5$
+			<img  src="orangejuice.jpg" width=10%>
+		</label><br>
+
+		<label id="spinachlabel" style="display: none;">
+			<input  id="f" type="radio" name="spinach" value="spinach">
+			spinach 5.99$
+			<img src="spinach.jpg" width=10%>
+		</label><br>
+
+		<label id="oliveoil" style="display: none;">
+			<input id="z" type="radio" name="olive" value="olive">
+			Olive Oil 7.5$
+			<img  src="olive.jpg" width=10%>
+		</label><br>
+
+		<label id="tomatoeslabel" style="display: none;">
+			<input id="g" type="radio" name="tomatoes" value="tomatoes">
+			Organic Tomatoes 8.00$
+			<img  src="tomatoes.jpg" width=10%>
+		</label><br>
+
+		<label id="cucumberlabel" style="display: none;">
+			<input id="h" type="radio" name="cucumber" value="cucumber">
+			Organic Cucumber 9.00$
+			<img  src="cucumber.jpg" width=10%>
+		</label><br>
+
+		<label id="salmonlabel" style="display: none;">
+			<input id="i" type="radio" name="salmon" value="salmon">
+			salmon 10.00$
+			<img  src="salmon.jpg" width=10%>
+		</label><br>
+
+		<label id="chickenwingslabel" style="display: none;">
+			<input type="radio" name="chickenwings" value="chickenwings">
+			chicken wings 10.00$
+			<img id="j" src="chickenwings.png" width=10%>
+		</label><br>
+
+		<label id="ribslabel" style="display: none;">
+			<input id="k" type="radio" name="ribs" value="ribs">
+			ribs 12.00$
+			<img  src="ribs.jpg" width=10%>
+		</label><br>
+
+		<label id="beeflabel" style="display: none;">
+			<input id="l" type="radio" name="beef" value="beef">
+			beef 13.97$
+			<img  src="beef.jpg" width=10%>
+		</label><br>
+
+		<button id="checkout" type="button" style="text-align: center" onclick="getshoptotal()"> Check Out</button><br>
+		Price: 
+		<p id="totalselected"> Nothing selected yet </p>
+</div>
+
+</div>
+<footer>
+  		<p>Site created by Haobin Jia, 8696583<br>
+  		<a href="hjia088@uottawa.ca">hjia088@uottawa.ca</a></p>
+</footer> 
+
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
