@@ -18,13 +18,49 @@
 </head>
 <body>
 <!--The main frame is from https://www.w3schools.com/bootstrap4/default.asp-->
-<div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>Welcome to Gotham hair salon</h1>
-  <p>Your Hair Butler</p> 
-  <p>We open 24/7/365 !</p>
-   <p>Address:</p>
-  <p>2020 Rideau,Ottawa,ON,Canada</p>
-  <p>Our Postcode is: K2H 76T</p>
+<div id="demo" class="carousel slide" data-ride="carousel" style="margin-bottom:0">
+  <!--Indicators-->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- Pictures are from Google-->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    	<div class="logo1" style="text-align: center">
+      <img class ="center" src="logo.jpg" height="500px" width="80%" alt="1" ></div>
+      <div class="carousel-caption">
+        <p style="font-size:120%">Welcome to Gothm hair salon</p>
+        <p style="font-size:100%"> Address:</p>
+        <p style="font-size:100%"> 2020 Rideau Street,Ottawa,ON</p>
+        <p style="font-size:100%"> K2J 7F9</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="text-align: center">
+      <img class ="center" src="girl.jpg" height="500px" width="80%" alt="2">
+      <div class="carousel-caption">
+        <p style="font-size:120%">We are ready to take care of your hair!</p >
+      </div>
+    </div>
+    <div class="carousel-item" style="text-align: center">
+      <img class ="center" src="batman.jpg" height="500px" width="80%" alt="3">
+      <div class="carousel-caption">
+        <p style="font-size:120%">Book an appointment today!</p >
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href=" " data-slide="prev">
+    <span class="carousel-control-prev-icon" style="color: black"></span>
+  </ a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon" style="color: black"></span>
+  </ a>
+
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
